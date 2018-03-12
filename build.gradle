@@ -2,6 +2,7 @@ group 'org.aitesting.microservices'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'checkstyle'
 
 sourceCompatibility = 1.8
 
@@ -12,4 +13,14 @@ repositories {
 dependencies {
     compile files('src/main/resources/axon-configuration-0.0.1.jar')
     testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+checkstyle {
+    configFile = new File(rootDir, "checkstyle.xml")
+}
+
+checkstyleMain {
+    source = fileTree('src/main') {
+        excludes = ['*.yml', '**/resources/**']
+    }
 }
