@@ -1,9 +1,8 @@
 package org.aitesting.microservices.tripmanagement.common.events;
 
+import java.util.UUID;
 import org.aist.libs.eventsourcing.configuration.eventstore.Event;
 import org.aist.libs.eventsourcing.configuration.eventstore.Name;
-
-import java.util.UUID;
 
 @Name("TripCreatedEvent")
 public class TripCreatedEvent extends Event {
@@ -11,7 +10,7 @@ public class TripCreatedEvent extends Event {
     private String originAddress;
     private String destinationAddress;
 
-    public TripCreatedEvent(UUID id, UUID userId, String originAddress, String destinationAddress){
+    public TripCreatedEvent(UUID id, UUID userId, String originAddress, String destinationAddress) {
         super(id);
         this.userId = userId;
         this.originAddress = originAddress;
