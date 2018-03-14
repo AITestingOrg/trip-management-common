@@ -16,6 +16,7 @@ dependencies {
 }
 
 checkstyle {
+    toolVersion = "8.7"
     configFile = new File(rootDir, "checkstyle.xml")
 }
 
